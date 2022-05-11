@@ -27,7 +27,7 @@ Power operator+(Power op1, Power op2){
 
 int main(int argc, char** argv) {
 	Power a(3,5), b(4,6), c;
-	cout << "ÃÊ±â °ª" << endl;
+	cout << "ÃƒÃŠÂ±Ã¢ Â°Âª" << endl;
 	cout << "a : "; a.show();
 	cout << "b : "; b.show(); 
 	cout << "c : "; c.show();
