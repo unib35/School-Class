@@ -11,41 +11,41 @@ public:
 		this->punch = punch;
 	}
 	void show();
-	friend Power& operator++(Power &op); //¿ÜºÎ ÀüÀ§ ´ÜÇ×¿¬»êÀÚÇÔ¼ö ÇÁ·»µå ÇÔ¼ö ¼±¾ğ 
-	friend Power& operator++(Power &op, int x); //¿ÜºÎ ÈÄÀ§ ´ÜÇ×¿¬»êÀÚÇÔ¼ö ÇÁ·»µå ÇÔ¼ö ¼±¾ğ 
+	friend Power& operator++(Power &op); //ì™¸ë¶€ ì „ìœ„ ë‹¨í•­ì—°ì‚°ìí•¨ìˆ˜ í”„ë Œë“œ í•¨ìˆ˜ ì„ ì–¸ 
+	friend Power& operator++(Power &op, int x); //ì™¸ë¶€ í›„ìœ„ ë‹¨í•­ì—°ì‚°ìí•¨ìˆ˜ í”„ë Œë“œ í•¨ìˆ˜ ì„ ì–¸ 
 };
 
 void Power :: show(){
 	cout << "kick = " << kick << ", " << "punch = " << punch << endl;
 } 
 
-Power &operator++(Power &op){ //¿ÜºÎ¿¡ ¼±¾ğµÈ ÀüÀ§ ´ÜÇ×¿¬»êÀÚ 
+Power &operator++(Power &op){ //ì™¸ë¶€ì— ì„ ì–¸ëœ ì „ìœ„ ë‹¨í•­ì—°ì‚°ì 
 	op.kick++;
 	op.punch++;
 	return op;
 }
 
-Power &operator++(Power &op, int x){ //¿ÜºÎ¿¡ ¼±¾ğµÈ ÈÄÀ§ ´ÜÇ×¿¬»êÀÚ 
-	Power tmp = op; //º¯°æÀüÀÇ op tmp¿¡ ÀúÀå 
+Power &operator++(Power &op, int x){ //ì™¸ë¶€ì— ì„ ì–¸ëœ í›„ìœ„ ë‹¨í•­ì—°ì‚°ì 
+	Power tmp = op; //ë³€ê²½ì „ì˜ op tmpì— ì €ì¥ 
 	op.kick++; // ++ 
 	op.punch++; // ++
-	return tmp; //º¯°æÀü op ¸®ÅÏ, op´Â ÂüÁ¶·Î °ªº¯°æ 
+	return tmp; //ë³€ê²½ì „ op ë¦¬í„´, opëŠ” ì°¸ì¡°ë¡œ ê°’ë³€ê²½ 
 }
 
 int main(int argc, char** argv) {
 	Power a(3,5), b;
-	cout << "ÃÊ±â °ª" << endl;
+	cout << "ì´ˆê¸° ê°’" << endl;
 	cout << "a : "; a.show();
 	cout << "b : "; b.show(); 
 	cout << endl;
 	
-	cout << "ÀüÀ§ ¿¬»ê / b = ++a" << endl;
+	cout << "ì „ìœ„ ì—°ì‚° / b = ++a" << endl;
 	b = ++a;
 	cout << "a : "; a.show();
 	cout << "b : "; b.show(); 
 	cout << endl;
 	
-	cout << "ÈÄÀ§ ¿¬»ê / b = a++" << endl;
+	cout << "í›„ìœ„ ì—°ì‚° / b = a++" << endl;
 	b = a++;
 	cout << "a : "; a.show();
 	cout << "b : "; b.show(); 
