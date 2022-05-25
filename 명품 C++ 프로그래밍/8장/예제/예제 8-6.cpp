@@ -26,7 +26,7 @@ class GrandDerived : private Derived{
 	int c; //setB, showB
 	protected:
 		void setAB(int x){
-			setA(x); //ÄÄÆÄÀÏ ¿À·ù 
+			setA(x); //Ã„Ã„Ã†Ã„Ã€Ã Â¿Ã€Â·Ã¹ 
 			showA(); 
 			setB(x);
 		}
