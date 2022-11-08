@@ -30,18 +30,20 @@ public class JavaTPCProject_D {
             con.setRequestProperty("X-NCP-APIGW-API-KEY", client_secret);
             
             BufferedReader br;
+            
             int responseCode = con.getResponseCode(); //응답 코드로 성공여부 확인
             //200은 성공
             if(responseCode == 200){
                 br = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
             } else{
-                br = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
+                br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
             }
             
             String line;
             StringBuffer response = new StringBuffer();
             while((line = br.readLine()) != null){
                 response.append(line);
+                System.out.println(line);
             }
             br.close();
             
@@ -62,5 +64,6 @@ public class JavaTPCProject_D {
             e.printStackTrace();
         }
     }
+    
     
 }
